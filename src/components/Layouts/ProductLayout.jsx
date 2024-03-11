@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { setSearchTerm } from "../../store/searchSlice";
 import { BiSearch } from "react-icons/bi";
 import { IoMdRefresh } from "react-icons/io";
+import logoNotFound from "@/product_not_found.png"
 
 const ProductLayout = (props) => {
   const { isLoading, categories } = props;
@@ -103,7 +104,7 @@ const ProductLayout = (props) => {
               ) : (
                 <div className="text-center text-slate-500 pb-5 md:pb-10 lg:pb-10">
                   <img
-                    src="../../public/images/product_not_found.png"
+                    src={logoNotFound}
                     className="w-1/3 mx-auto"
                     alt=""
                   />

@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { IoLibraryOutline } from "react-icons/io5";
+import logo from "@/shoyii.png";
 
 const handleLogout = () => {
   localStorage.removeItem("token");
@@ -18,9 +19,9 @@ const Navbar = () => {
         <div className="flex-1 items-center">
           <a className="">
             <img
-              src="../../public/images/shoyii.png"
+              src={logo}
               className="w-32 md:w-52 lg:w-52"
-              alt=""
+              alt="logo-shoyii"
             />
           </a>
         </div>
@@ -102,7 +103,9 @@ const Navbar = () => {
                     {dataUser.name.lastname.slice(0, 1).toUpperCase()}
                   </>
                 ) : (
-                  "Nama Belum Ditentukan"
+                  <>
+                    ''
+                  </>
                 )}
               </div>
             </div>
@@ -113,11 +116,14 @@ const Navbar = () => {
               <li>
                 <a className="justify-between">
                   Profile
-                  <span className="badge">New</span>
+                  <span className="badge">❗</span>
                 </a>
               </li>
               <li>
-                <Link to={"/setting"}>Settings</Link>
+                <a className="justify-between">
+                  Setting
+                  <span className="badge">❗</span>
+                </a>
               </li>
               <li>
                 <a onClick={handleLogout}>Logout</a>

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/cartSlice";
 import { removeFavorite } from "../../store/favoriteSlice";
 import { MdOutlineDeleteOutline } from "react-icons/md";
+import logoNotFound from "@/product_not_found.png"
 
 const FavoriteLayout = () => {
   const dispatch = useDispatch();
@@ -85,7 +86,7 @@ const FavoriteLayout = () => {
           ) : (
             <div className="text-center text-slate-500 pb-7 md:pb-10 lg:pb-10">
               <img
-                src="../../public/images/product_not_found.png"
+                src={logoNotFound}
                 className="w-44 md:w-72 lg:w-72 mx-auto"
                 alt=""
               />

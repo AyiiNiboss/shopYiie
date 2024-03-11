@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
-import Button from "../Elements/Button/Button";
 import Banner from "../Fragments/Banner";
-import { getCategoriesProducts } from "../../services/product.service";
-import Card from "../Fragments/Card";
+import banner1 from "@/banner-1.png";
+import banner2 from "@/banner-2.jpg";
 
 const BannerLayout = () => {
   return (
@@ -14,10 +12,10 @@ const BannerLayout = () => {
         <div className="w-full lg:w-2/6">
           <div className="flex lg:flex-col md:items-center md:gap-1 lg:ml-1">
             <a href="http://">
-              <img src="../../public/images/banner-1.png" alt="" />
+              <img src={banner1} alt="" />
             </a>
             <a href="http://">
-              <img src="../../public/images/banner-2.jpg" alt="" />
+              <img src={banner2} alt="" />
             </a>
           </div>
         </div>
