@@ -9,14 +9,19 @@ const handleLogout = () => {
 
 const Navbar = () => {
   const dataUser = useSelector((state) => state.user.value);
+
   const dataCartRedux = useSelector((state) => state.cart.value);
-  const dataFavoriteRedux = useSelector((state) => state.favorite.value)
+  const dataFavoriteRedux = useSelector((state) => state.favorite.value);
   return (
     <>
       <div className="container mx-auto">
         <div className="flex-1 items-center">
           <a className="">
-            <img src="../../public/images/shoyii.png" className="w-32 md:w-52 lg:w-52" alt="" />
+            <img
+              src="../../public/images/shoyii.png"
+              className="w-32 md:w-52 lg:w-52"
+              alt=""
+            />
           </a>
         </div>
         <div className="flex justify-center items-center">
@@ -71,7 +76,10 @@ const Navbar = () => {
                   {dataCartRedux.length} Items
                 </span>
                 <div className="card-actions">
-                  <Link to={"/cart"} className="btn bg-[#EA94AB] hover:bg-[#CB8C9D] btn-block text-slate-100">
+                  <Link
+                    to={"/cart"}
+                    className="btn bg-[#EA94AB] hover:bg-[#CB8C9D] btn-block text-slate-100"
+                  >
                     View cart
                   </Link>
                 </div>
@@ -85,8 +93,17 @@ const Navbar = () => {
               className="btn btn-ghost btn-circle"
             >
               <div className="w-10 aspect-square rounded-full bg-slate-500 flex justify-center items-center text-slate-200 text-md">
-                {dataUser.name.firstname.slice(0, 1).toUpperCase()}
-                {dataUser.name.lastname.slice(0, 1).toUpperCase()}
+                {dataUser &&
+                dataUser.name &&
+                dataUser.name.firstname &&
+                dataUser.name.lastname ? (
+                  <>
+                    {dataUser.name.firstname.slice(0, 1).toUpperCase()}
+                    {dataUser.name.lastname.slice(0, 1).toUpperCase()}
+                  </>
+                ) : (
+                  "Nama Belum Ditentukan"
+                )}
               </div>
             </div>
             <ul
