@@ -19,7 +19,6 @@ const ProductPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { categories } = useParams();
   const dispatch = useDispatch();
-  // const [products, setProducts] = useState([]);
 
   useLogin();
   useEffect(() => {

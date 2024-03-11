@@ -2,6 +2,8 @@ import { useState } from "react";
 import Button from "../Elements/Button/Button";
 import InputForm from "../Elements/Inputan";
 import { login } from "../../services/auth.service";
+import fotoAuth1 from "@/background-auth-1.jpg"
+import fotoAuth2 from "@/background-auth-2.jpg"
 
 const FormLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -52,8 +54,8 @@ const FormLogin = () => {
         </div>
         <Button
           type="submit"
-          classButton={`w-full ${isLoading ? "cursor-progress" : "cursor-pointer"} hover:bg-[url('../../../public/images/background-auth-2.jpg')] bg-fixed bg-no-repeat bg-center`}
-          color="bg-[url('../../../public/images/background-auth-1.jpg')] bg-fixed bg-no-repeat bg-center"
+          classButton={`w-full ${isLoading ? "cursor-progress" : "cursor-pointer"} hover:bg-[url('@/background-auth-2.jpg')] bg-fixed bg-no-repeat bg-center`}
+          color="bg-[url('@/background-auth-1.jpg')] bg-fixed bg-no-repeat bg-center"
           disabled={isLoading}
         >
           {isLoading ? "Loading..." : "Login"}

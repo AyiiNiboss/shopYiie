@@ -4,7 +4,7 @@ import { IoLibraryOutline } from "react-icons/io5";
 
 const handleLogout = () => {
   localStorage.removeItem("token");
-  window.location.href = "/login";
+  window.location.href = "/";
 };
 
 const Navbar = () => {

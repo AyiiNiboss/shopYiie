@@ -8,7 +8,7 @@ export const useLogin = () => {
         if(token){
             setUsername(getUsername(token))
         }else{
-            window.location.href = "/login"
+            window.location.href = "/"
         }
     }, [])
     
